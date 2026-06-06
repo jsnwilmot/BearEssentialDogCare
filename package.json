@@ -1,0 +1,11 @@
+{
+  "name": "bear-essential-dog-care",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for Bear Essential Dog Care mobile grooming.",
+  "scripts": {
+    "lint": "node --check js/site.js",
+    "build": "node --check js/site.js",
+    "test": "npm run lint && npm run build"
+  }
+}
