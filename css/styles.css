@@ -533,10 +533,10 @@ main {
   content: "";
   position: absolute;
   inset: 1.2rem auto auto 1.2rem;
-  width: 5rem;
-  height: 5rem;
+  width: clamp(3.25rem, 12vw, 4.5rem);
+  height: clamp(3.25rem, 12vw, 4.5rem);
   background: rgba(4, 123, 136, 0.12);
-  border-radius: 1.5rem;
+  border-radius: clamp(0.9rem, 3vw, 1.35rem);
   transform: rotate(-8deg);
 }
 
@@ -548,6 +548,8 @@ main {
 }
 
 .step {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 3.5rem 1fr;
   gap: 1rem;
@@ -557,6 +559,8 @@ main {
 .step::before {
   counter-increment: step;
   content: "0" counter(step);
+  position: relative;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 3.15rem;
@@ -662,7 +666,10 @@ main {
 
 .story-mark img {
   width: min(100%, 20rem);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: #fff;
   border-radius: 1.4rem;
+  object-fit: contain;
 }
 
 .award-line {
@@ -850,6 +857,32 @@ textarea {
   margin-top: 1.5rem;
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.92rem;
+}
+
+.site-footer .site-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  color: rgba(255, 255, 255, 0.78);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-footer .site-credit:hover {
+  color: var(--tan-2);
+}
+
+.site-credit__logo {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.25rem;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 0.35rem;
 }
 
 @media (min-width: 700px) {
@@ -1534,6 +1567,10 @@ textarea {
   .step::before {
     width: 2.65rem;
     height: 2.65rem;
+  }
+
+  .steps-panel::before {
+    inset: 1.15rem auto auto 1.15rem;
   }
 
   .closing-cta,
