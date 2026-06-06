@@ -733,11 +733,10 @@ details p {
 
 .closing-cta-logo {
   width: 100%;
+  aspect-ratio: 1;
   height: auto;
-  padding: 0.55rem;
   object-fit: contain;
-  background: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
 }
 
 .page-hero {
@@ -1609,9 +1608,6 @@ textarea {
     gap: 0.85rem;
   }
 
-  .closing-cta-logo {
-    padding: 0.4rem;
-  }
 }
 
 @media (max-width: 359px) {
